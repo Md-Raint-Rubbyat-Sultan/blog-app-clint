@@ -1,0 +1,11 @@
+.megaMenu{
+    text-align: center;
+    width: 120px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 62px;
+    background-color: rgb(67, 63, 59);
+    border-radius: 10px 0 0 10px;
+    z-index: 3;
+}
