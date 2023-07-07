@@ -14,10 +14,10 @@ const Header = () => {
                 </h1>
                 <div className='hidden sm:block'>
                     <ul className='flex justify-between items-center text-white'>
-                        <li className='me-5 font-bold'>
+                        <li className='me-8 font-bold'>
                             <Link to={'/'}>Home</Link>
                         </li>
-                        <li className='me-5 font-bold'>
+                        <li className='me-8 font-bold'>
                             <Link to={'/blog'}>My Blogs</Link>
                         </li>
                         <li className='font-bold'>
@@ -27,14 +27,14 @@ const Header = () => {
                 </div>
                 <div className='block sm:hidden'>
                     <FaBars onClick={()=>setShowMenu(!showMenu)} className='text-2xl text-white' />
-                    <ul className={`${showMenu? 'megaMenu': "hidden"} text-white`}>
+                    <ul className={`${showMenu? 'megaMenu': "hidden"} text-white text-left p-5`}>
                     <li className='me-5 font-bold'>
                             <Link to={'/'}>Home</Link>
                         </li>
                         <li className='font-bold my-3'>
                             <Link to={'/blog'}>My Blogs</Link>
                         </li>
-                        <li className='font-bold mb-3'>
+                        <li className='font-bold'>
                             <Link to={'/login'}>Login</Link>
                         </li>
                     </ul>
