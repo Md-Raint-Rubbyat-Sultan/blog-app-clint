@@ -9,11 +9,11 @@ const Header = () => {
     return (
         <header className='bg-stone-700'>
             <nav className='flex justify-around items-center h-20 xl:h-32'>
-                <h1 className='text-3xl text-amber-500 font-bold'>
-                    <Link to={'/'}>Rimis-Blog</Link>
+                <h1 className='text-3xl md:text-4xl lg:text-5xl text-amber-500 font-bold'>
+                    <Link to={'/'}>Rimis Blog</Link>
                 </h1>
                 <div className='hidden sm:block'>
-                    <ul className='flex justify-between items-center text-white'>
+                    <ul className='flex justify-between items-center text-white md:text-xl'>
                         <li className='me-8 font-bold'>
                             <Link to={'/'}>Home</Link>
                         </li>
