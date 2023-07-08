@@ -1,5 +1,6 @@
 import { } from 'react';
 import '../Home/Home.css'
+import NotLogin from '../NotLogin/NotLogin';
 
 const Home = () => {
     return (
@@ -15,12 +16,13 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className='mt-24 md:mt-64 lg:mt-96 text-center text-5xl anime'>
+            <section className='mt-24 sm:mt-40 md:mt-96 text-center text-5xl anime'>
                 <h3 className='font-extrabold gred-color  mb-8'>Welcome</h3>
                 <h3 className='font-extrabold gred-color mb-8'>To</h3>
                 <h3 className='font-extrabold 
                 gred-color'>Rimi-Jhimi-Bristir-Golpo</h3>
             </section>
+            <NotLogin></NotLogin>
         </section>
     );
 };

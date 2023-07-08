@@ -1,10 +1,21 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaDoorOpen } from 'react-icons/fa';
 import '../Header/Header.css';
+import { AuthProvider } from '../../../contexts/AuthContext/AuthContext';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthProvider);
+
     const [showMenu, setShowMenu] = useState(false);
+
+    const handelLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(er => console.error(er))
+    }
 
     return (
         <header className='bg-stone-700'>
@@ -17,25 +28,45 @@ const Header = () => {
                         <li className='me-8 font-bold'>
                             <Link to={'/'}>Home</Link>
                         </li>
-                        <li className='me-8 font-bold'>
-                            <Link to={'/blog'}>My Blogs</Link>
-                        </li>
+                        {
+                            user?.uid && user?.emailVerified ?
+                                <li className='me-8 font-bold'>
+                                    <Link to={'/blog'}>My Blogs</Link>
+                                </li>
+                                :
+                                ''
+                        }
                         <li className='font-bold'>
-                            <Link to={'/login'}>Login</Link>
+                            {
+                                user?.uid && user?.emailVerified ?
+                                    <FaDoorOpen onClick={handelLogOut} className='cursor-pointer'></FaDoorOpen>
+                                    :
+                                    <Link to={'/login'}>Login</Link>
+                            }
                         </li>
                     </ul>
                 </div>
                 <div className='block sm:hidden'>
-                    <FaBars onClick={()=>setShowMenu(!showMenu)} className='text-2xl text-white' />
-                    <ul className={`${showMenu? 'megaMenu': "hidden"} text-white text-left p-5`}>
-                    <li className='me-5 font-bold'>
+                    <FaBars onClick={() => setShowMenu(!showMenu)} className='text-2xl text-white' />
+                    <ul className={`${showMenu ? 'megaMenu' : "hidden"} text-white text-left p-5`}>
+                        <li className='mb-5 font-bold'>
                             <Link to={'/'}>Home</Link>
                         </li>
-                        <li className='font-bold my-3'>
-                            <Link to={'/blog'}>My Blogs</Link>
-                        </li>
+                        {
+                            user?.uid && user?.emailVerified ?
+                                <li className='mb-5 font-bold'>
+                                    <Link to={'/blog'}>My Blogs</Link>
+                                </li>
+                                :
+                                ''
+                        }
                         <li className='font-bold'>
-                            <Link to={'/login'}>Login</Link>
+                            {
+                                user?.uid && user?.emailVerified ?
+                                    <FaDoorOpen onClick={handelLogOut} className='cursor-pointer'></FaDoorOpen>
+                                    :
+                                    <Link to={'/login'}>Login</Link>
+                            }
                         </li>
                     </ul>
                 </div>
