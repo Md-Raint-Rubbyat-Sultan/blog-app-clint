@@ -12,20 +12,20 @@ const Register = () => {
                     <div className='flex flex-col justify-center items-start my-10'>
 
                         <div>
-                            <label className='md:text-2xl' htmlFor="user">User Name:
-                                <input className='block  mb-7 py-2 px-8 inputField' id='user' type="user" />
+                            <label className='md:text-2xl' htmlFor="user">
+                                <input className='block  mb-10 py-2 px-4 inputField' id='user' type="user" placeholder='User Name' />
                             </label>
                         </div>
 
                         <div>
-                            <label className='md:text-2xl' htmlFor="email">Email:
-                                <input className='block  mb-7 py-2 px-8 inputField' id='email' type="email" />
+                            <label className='md:text-2xl' htmlFor="email">
+                                <input className='block  mb-10 py-2 px-4 inputField' id='email' type="email" placeholder='Enter you email' />
                             </label>
                         </div>
 
                         <div>
-                            <label className='md:text-2xl' htmlFor="password">Password:
-                                <input className='block py-2 px-8 mb-7 inputField' id='password' type="password" />
+                            <label className='md:text-2xl' htmlFor="password">
+                                <input className='block py-2 px-4 mb-10 inputField' id='password' type="password" placeholder='Password' />
                             </label>
                         </div>
 

@@ -16,24 +16,28 @@ const Login = () => {
                     <div className='flex flex-col justify-center items-start my-10'>
 
                         <div>
-                            <label className='md:text-2xl' htmlFor="email">Email:
-                                <input className='block  mb-7 py-2 px-8 inputField' id='email' type="email" />
+                            <label className='md:text-2xl' htmlFor="email">
+                                <input className='block  mb-7 py-2 px-4 inputField' id='email' type="email" placeholder='Enter your email' />
                             </label>
                         </div>
 
                         <div>
-                            <label className='md:text-2xl' htmlFor="password">Password:
-                                <input className='block py-2 px-8 inputField' id='password' type="password" />
+                            <label className='md:text-2xl' htmlFor="password">
+                                <input className='block py-2 px-4 inputField' id='password' type="password" placeholder='Password' />
                             </label>
                         </div>
 
-                        <p className='text-amber-500` my-7'><small>Forget Password</small></p>
+                        <p className='text-amber-500 my-7'><small>Forget Password</small></p>
 
-                        <button className='font-bold py-3 px-10 bg-amber-500 text-white border-2 rounded-lg btn-hover'>Login</button>
+                        <div className='flex flex-col justify-between items-center'>
+                            <button className='font-bold py-3 px-10 bg-amber-500 text-white border-2 rounded-lg btn-hover'>Login</button>
+                            <p className='text-xl text-gray-400 my-3'>or</p>
+                            <button className='font-bold py-3 px-10 bg-amber-500 text-white border-2 rounded-lg btn-hover'>Google</button>
+                        </div>
 
                     </div>
 
-                    <p>If you don't have an account please <Link className='text-amber-500' to={'/register'}>Register</Link></p>
+                    <p>If you don't have an account please <Link className='text-xl text-amber-500' to={'/register'}>Register</Link></p>
 
                 </form>
             </div>
