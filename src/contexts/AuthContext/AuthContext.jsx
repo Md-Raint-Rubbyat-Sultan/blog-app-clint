@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { GoogleAuthProvider, createUserWithEmailAndPassword, deleteUser, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import app from '../../firebase/firebase.config';
 
 
@@ -35,10 +35,14 @@ const AuthContext = ({ children }) => {
         return sendEmailVerification(auth.currentUser);
     }
 
-    // not setup
     const resetPass = (email) => {
         setLoader(true);
         return sendPasswordResetEmail(auth, email);
+    }
+
+    const deleteProfile = ()=>{
+        setLoader(true);
+        return deleteUser(user);
     }
 
     const logOut = () => {
@@ -64,6 +68,7 @@ const AuthContext = ({ children }) => {
         loginWithEmail,
         emailVerification,
         resetPass,
+        deleteProfile,
         logOut,
         loader,
         setLoader

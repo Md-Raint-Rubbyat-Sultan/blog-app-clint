@@ -45,7 +45,7 @@ const Login = () => {
                 else {
                     toast.error('Your email is not verified. Please check your email and verify.')
                 }
-                console.log(user);
+                // console.log(user);
             })
             .catch(er => toast.error(er.message))
             .finally(setLoader(false))
@@ -75,7 +75,7 @@ const Login = () => {
                             </label>
                         </div>
 
-                        <p className='text-amber-500 cursor-pointer my-7'><small>Forget Password</small></p>
+                        <p className='text-amber-500 cursor-pointer my-7'><small><Link to={'/forget-password'}>Forget Password</Link></small></p>
 
                         <div className='flex flex-col justify-between items-center'>
                             <button type='submit' className='font-bold py-3 px-10 bg-amber-500 text-white border-2 rounded-lg btn-hover'>Login</button>
