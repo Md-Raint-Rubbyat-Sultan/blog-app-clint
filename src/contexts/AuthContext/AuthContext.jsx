@@ -63,6 +63,7 @@ const AuthContext = ({ children }) => {
 
     const authInfo = {
         user,
+        setUser,
         googleSingin,
         createAccount,
         loginWithEmail,

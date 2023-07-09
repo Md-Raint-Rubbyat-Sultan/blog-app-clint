@@ -3,14 +3,23 @@ import { AuthProvider } from '../../../contexts/AuthContext/AuthContext';
 import { toast } from 'react-hot-toast';
 
 const Footer = () => {
-    const { user,deleteProfile } = useContext(AuthProvider)
+    const { user, setUser, deleteProfile, setLoader } = useContext(AuthProvider)
 
-    const handelDelete = ()=>{
-        deleteProfile()
-        .then(()=>{
-            toast.success('Your profile has been deleted.')
-        })
-        .catch(er=> toast.error(`Something went wrong ${er.message}`))
+    const handelDelete = () => {
+        const agree = window.confirm("Are you sure you want to delete your account?")
+
+        if (agree) {
+            deleteProfile()
+                .then(() => {
+                    toast.success('Your profile has been deleted.')
+                    setUser(null)
+                })
+                .catch(er => toast.error(`Something went wrong ${er.message}`))
+                .finally(setLoader(false))
+        }
+        else {
+            toast.success("Account is save now")
+        }
     }
 
     return (
