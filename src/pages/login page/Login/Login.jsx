@@ -36,7 +36,11 @@ const Login = () => {
                 const user = result.user;
                 if (user?.emailVerified) {
                     navigate(from, { replace: true })
-                    toast.success('Successfully Login');
+                    toast.success('You have successfully Login.', { position: "bottom-right", });
+                    toast.success('Please reload the site if you login the site for the first time. Thank You!', {
+                        duration: 15000,
+                        position: "bottom-right",
+                    });
                 }
                 else {
                     toast.error('Your email is not verified. Please check your email and verify.')
