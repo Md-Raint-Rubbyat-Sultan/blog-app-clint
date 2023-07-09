@@ -32,7 +32,7 @@ const Register = () => {
     const verifyUser = () => {
         emailVerification()
             .then(() => {
-                toast.success('An verification email has been send, please check your email.');
+                toast.success('An verification email has been send, please check your email.',{duration:20000});
             })
             .catch(er => toast.error(er.message))
     }
