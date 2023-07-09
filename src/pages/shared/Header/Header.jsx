@@ -54,7 +54,7 @@ const Header = () => {
                         </li>
                         {
                             user?.uid ?
-                                <li className='me-8 font-bold'>
+                                <li className='mb-5 font-bold'>
                                     <Link to={'/blog'}>My Blogs</Link>
                                 </li>
                                 :
