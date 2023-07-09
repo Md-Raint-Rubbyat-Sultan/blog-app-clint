@@ -29,21 +29,21 @@ const Header = () => {
                             <Link to={'/'}>Home</Link>
                         </li>
                         {
-                            user?.uid && user?.emailVerified ?
+                            user?.uid ?
                                 <li className='me-8 font-bold'>
                                     <Link to={'/blog'}>My Blogs</Link>
                                 </li>
                                 :
                                 ''
                         }
-                        <li className='font-bold'>
-                            {
-                                user?.uid && user?.emailVerified ?
-                                    <FaDoorOpen onClick={handelLogOut} className='cursor-pointer'></FaDoorOpen>
-                                    :
-                                    <Link to={'/login'}>Login</Link>
-                            }
+                        {
+                            user?.uid ?
+                            <FaDoorOpen onClick={handelLogOut} className=' cursor-pointer'></FaDoorOpen>
+                            :
+                            <li className='font-bold'>
+                            <Link to={'/login'}>Login</Link>
                         </li>
+                        }
                     </ul>
                 </div>
                 <div className='block sm:hidden'>
@@ -53,21 +53,21 @@ const Header = () => {
                             <Link to={'/'}>Home</Link>
                         </li>
                         {
-                            user?.uid && user?.emailVerified ?
-                                <li className='mb-5 font-bold'>
+                            user?.uid ?
+                                <li className='me-8 font-bold'>
                                     <Link to={'/blog'}>My Blogs</Link>
                                 </li>
                                 :
                                 ''
                         }
-                        <li className='font-bold'>
-                            {
-                                user?.uid && user?.emailVerified ?
-                                    <FaDoorOpen onClick={handelLogOut} className='cursor-pointer'></FaDoorOpen>
-                                    :
-                                    <Link to={'/login'}>Login</Link>
-                            }
+                        {
+                            user?.uid ?
+                            <FaDoorOpen onClick={handelLogOut} className=' cursor-pointer'></FaDoorOpen>
+                            :
+                            <li className='font-bold'>
+                            <Link to={'/login'}>Login</Link>
                         </li>
+                        }
                     </ul>
                 </div>
             </nav>

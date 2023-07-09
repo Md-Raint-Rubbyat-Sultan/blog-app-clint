@@ -20,12 +20,7 @@ const MainBlog = () => {
 
             </div>
             {/* user.email === "mdranitrubbyatsultan@gmail.com" */}
-            {
-                user.email ?
-                    <BlogPost></BlogPost>
-                    :
-                    ''
-            }
+            <BlogPost></BlogPost>
         </section>
     );
 };
